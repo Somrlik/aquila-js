@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>Aquila</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="src/css.css" type="text/css" />
+        <!-- <script type="text/javascript" src="src/jquery.js"></script> -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript" src="src/aquila.js"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="menu">
+                <ul class="dropdown">
+                    <li><span>Settings</span>
+                        <ul class="submenu">
+                            <li data-command="fil_save"><span>Manually save state</span></li>
+                            <li data-command="fil_print"><span>Print current calculation(s)</span></li>
+                            <li class="separator">&nbsp;</li>
+                            <li data-command="fil_options" data-castWindow="true"><span>Options</span></li>
+                            <li><span>Preffered values</span>
+                                <ul>
+                                    <li><span>Resistors</span>
+                                        <ul>
+                                            <li data-command="fil_pre_res_setValues" data-values='{"scale": "E12"}'><span>E12 (10%)</span></li>
+                                            <li data-command="fil_pre_res_setValues" data-values='{"scale": "E24"}'><span>E24 (5%)</span></li>
+                                            <li data-command="fil_pre_res_setValues" data-values='{"scale": "E48"}'><span>E48 (2%)</span></li>
+                                            <li data-command="fil_pre_res_setValues" data-values='{"scale": "E96"}'><span>E96 (1%)</span></li>
+                                            <li data-command="fil_pre_res_setValues" data-values='{"scale": "E192"}'><span>E192 (&lt;1%)</span></li>
+                                        </ul>
+                                    </li>
+                                    <li><span>Capacitors</span>
+                                        <ul>
+                                            <li data-command="fil_pre_cap_setValues" data-values='{"scale": "E6"}'><span>E6 (20%)</span></li>
+                                            <li data-command="fil_pre_cap_setValues" data-values='{"scale": "E12"}'><span>E12 (10%)</span></li>
+                                            <li data-command="fil_pre_cap_setValues" data-values='{"scale": "E24"}'><span>E24 (5%)</span></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="separator">&nbsp;</li>
+                            <li data-command="fil_quit"><span>Quit AquilaJS</span></li>
+                        </ul>
+                    </li>
+                    <li><span>Resistance</span>
+                        <ul class="submenu">
+                            <li data-command="res_code" data-castWindow="true"><span>Resistor code calculator</span></li>
+                            <li data-command="res_connections" data-castWindow="true"><span>Resistor connections</span></li>
+                            <li data-command="res_led" data-castWindow="true"><span>Resistor LED calculator</span></li>
+                        </ul>
+                    </li>
+                    <li><span>Capacitance</span>
+                        <ul class="submenu">
+                            <li data-command="cap_code" data-castWindow="true"><span>Capacitor code calculator</span></li>
+                            <li data-command="cap_conncetions" data-castWindow="true"><span>Capacitor conncetions</span></li>
+                            <li data-command="cap_units" data-castWindow="true"><span>Unit conversions</span></li>
+                            <li data-command="cap_energy" data-castWindow="true"><span>Energy and charge in capacitor</span></li>
+                        </ul>
+                    </li>
+                    <li><span>Inductance</span>
+                        <ul class="submenu">
+                            <li data-command="ind_code" data-castWindow="true"><span>Inductor code calculator</span></li>
+                        </ul>
+                    </li>
+                    <li><span>Power</span>
+                        <ul class="submenu">
+                            <li data-command="pow_calculator" data-castWindow="true"><span>Power calculator</span></li>
+                        </ul>
+                    </li>
+                    <li><span>Frequency</span>
+                        <ul class="submenu">
+                            <li data-command="fre_frequency" data-castWindow="true"><span>Frequency calculator</span></li>
+                            <li data-command="fre_reactance" data-castWindow="true"><span>Reactance calculator</span></li>
+                            <li data-command="fre_555" data-castWindow="true"><span>555 Timer calculator</span></li>
+                            <li data-command="fre_rcFiler" data-castWindow="true"><span>RC Filter calculator</span></li>
+                        </ul>
+                    </li>
+                    <li><span>Other</span>
+                        <ul class="submenu">
+                            <li data-command="oth_calculator" data-castWindow="true"><span>Standart calculator</span></li>
+                            <li data-command="oth_ohm" data-castWindow="true"><span>Ohm's law calculator</span></li>
+                            <li data-command="oth_peak" data-castWindow="true"><span>Peak - root square converter</span></li>
+                            <li data-command="oth_divider" data-castWindow="true"><span>Potential divider</span></li>
+                            <li data-command="oth_regualtor" data-castWindow="true"><span>Voltage regulator</span></li>
+                            <li data-command="oth_wheatstone" data-castWindow="true"><span>Wheatstone/omegameter calculator</span></li>
+                        </ul>
+                    </li>
+                    <li><span>Online Resources</span>
+                        <ul class="submenu">
+                            <li><span>Some links...</span></li>
+                        </ul>
+                    </li>
+                    <li><span>Windows</span>
+                        <ul class="submenu">
+                            <li data-command="win_closeAll"><span>Close all windows</span></li>
+                            <li data-command="win_minimizeAll"><span>Minimize all windows</span></li>
+                            <li class="separator">&nbsp;</li>
+                            <li data-command="win_cascade"><span>Cascade windows</span></li>
+                        </ul>
+                    </li>
+                    <li><span>Help</span>
+                        <ul class="submenu">
+                            <li data-command="hel_about" data-castWindow="true"><span>About...</span></li>
+                            <li data-command="hel_help" data-castWindow="true"><span>Help</span></li>
+                            <li class="separator">&nbsp;</li>
+                            <li data-command="hel_contact" data-castWindow="true"><span>Contact Author</span></li>
+                            <li class="separator">&nbsp;</li>
+                            <li><span>AquilaJS 1.0</span></li>
+                        </ul>
+                    </li>
+                    <li><span>DEBUGGING</span>
+                        <ul class="submenu">
+                            <li data-command="dbg_dummyWindow" data-values='{"size":"200"}' data-castWindow="true"><span>Dummy window 200x200</span></li>
+                            <li data-command="dbg_dummyWindow" data-values='{"size":"400"}' data-castWindow="true"><span>Dummy window 400x400</span></li>
+                            <li data-command="dbg_dummyWindow" data-values='{"size":"600"}' data-castWindow="true"><span>Dummy window 600x600</span></li>
+                            <li data-command="dbg_printFunctionPrototypes"><span>Print functions prototypes</span></li>
+                            <li data-command="dbg_printAllWindows"><span>Print all windows</span></li>
+                            <li class="separator">&nbsp;</li>
+                            <li data-command="dgb_undefinedFunction"><span>Undefined function</span></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div id="separator">&nbsp;</div>
+            <div id="canvas">
+            <!--
+                <div id="0" class="window" style="width:200px;height:200px;">
+                    <div class="bar">
+                        <span class="window-name">Window name</span>
+                        <div class="window-buttons">
+                            <a data-command="win_minimize" data-id="0">▼</a>
+                            <a data-command="win_close" data-id="0">X</a>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <span>Ahoj!</span>
+                    </div>
+                </div>
+                -->
+            </div>
+            <div id="minimized-windows"></div>
+            <div id="status-bar">
+                <span data-name="text" id="status-bar-text">Some status bar text.</span>
+                <span data-name="options" class="button" data-command="fil_options" data-castWindow="true">Options</span>
+                <span data-name="values">Preffered values: R: <strong id="resistor-values">E24 (5%)</strong> | C: <strong id="capacitor-values">E6 (20%)</strong></span>
+            </div>
+        </div>
+    </body>
+</html>

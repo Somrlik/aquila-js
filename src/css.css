@@ -1,0 +1,168 @@
+body, li, ul, hr, table {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: Arial, sans-serif;
+}
+body, #wrapper {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+#wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+/* DROPDOWN MENU */
+#menu {
+    background-color: black;
+    width: 100%;
+    clear: both;
+    float: left;
+    z-index: 100;
+}
+#menu ul {
+    list-style: none;
+    background-color: black;
+}
+#menu ul.dropdown {
+    position: relative;
+    }
+#menu ul.dropdown li {
+    font-weight: bold;
+    float: left;
+    zoom: 1;
+    background: #ccc; 
+    padding: 4px 8px;
+    border-right: 1px solid #333;
+    color: #222;
+}
+#menu ul.dropdown li:hover {
+    color: #000;
+}
+#menu ul.dropdown hr {
+    width: 100%;
+    margin: 5px;
+}
+#menu ul.dropdown li:last-child {
+    border-right: none;
+} /* Doesn't work in IE */
+#menu ul.dropdown li.hover,
+#menu ul.dropdown li:hover {
+    background: #F3D673;
+    color: black;
+    position: relative;
+}
+#menu ul.dropdown ul {
+    visibility: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+#menu ul.dropdown ul li {
+    font-weight: normal;
+    background: #f6f6f6;
+    color: #000; 
+	border-bottom: 1px solid #ccc;
+    float: none;
+    border-right: none;
+    width: 100%;
+    display: inline-block;
+} /* IE 6 & 7 Needs Inline Block */
+#menu ul.dropdown ul li span {
+    white-space: nowrap;
+}
+#menu ul.dropdown ul ul {
+    left: 100%;
+    top: 0;
+}
+#menu ul.dropdown li:hover > ul {
+    visibility: visible;
+}
+
+#separator {
+    height: 0;
+    clear: both;
+    width: 100%;
+}
+/* CANVAS */
+#canvas {
+    width: 100%;
+    height: 100%;
+    background-color: gray;
+    position: relative;
+    z-index: -1;
+}
+#canvas .window {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+/* WINDOW */
+
+.window {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: auto;
+    background-color: #ccc;
+    border: 1px solid black;
+}
+
+.window .bar {
+    background-color: gray;
+    border-bottom: 1px solid black;
+    padding: 3px;
+}
+
+.window .window-buttons {
+    float: right;
+    clear: right;
+}
+
+.window .content {
+    padding: 5px;
+}
+
+.window .window-buttons a {
+    display: block;
+    float: left;
+    clear: none;
+    cursor: pointer;
+    width: 20px;
+    height: 15px;
+    z-index: 10;
+}
+
+/* STATUS BAR */
+#status-bar {
+    width: 100%;
+    height: 32px;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+#status-bar span {
+    height: 100%;
+    font-size: 1.2em;
+    display: block;
+    float: right;
+    padding: 0 10px;
+    margin: auto 0;
+}
+#status-bar span:first-child {
+    float: left;
+}
+#status-bar .button:hover {
+    background-color: #F3D673;
+}
+#status-bar .button {
+    background: #ccc;
+    color: #222;
+    font-weight: bold;
+}
